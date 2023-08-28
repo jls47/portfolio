@@ -5,12 +5,12 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
-function WorkItem() {
-	return (
-		<>
-			<h1>Work Item</h1>
-		</>
-	)
+function AdminLogin() {
+    return (
+        <>
+            <h1>Admin Login</h1>
+        </>
+    )
 }
 
-export default WorkItem
+export default AdminLogin

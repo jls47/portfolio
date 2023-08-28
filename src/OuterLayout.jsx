@@ -4,13 +4,16 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Sidebar from './Sidebar'
+import Techbar from './Techbar'
 
-function WorkItem() {
+function OuterLayout() {
 	return (
 		<>
-			<h1>Work Item</h1>
+			<h1>OuterLayout</h1>
+			<Sidebar />
 		</>
 	)
 }
 
-export default WorkItem
+export default OuterLayout
