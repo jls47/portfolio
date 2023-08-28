@@ -10,7 +10,6 @@ import Techbar from './Techbar'
 function OuterLayout() {
 	return (
 		<>
-			<h1>OuterLayout</h1>
 			<Sidebar />
 		</>
 	)

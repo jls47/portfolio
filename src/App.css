@@ -1,9 +1,4 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
+
 
 .logo {
   height: 6em;
@@ -82,11 +77,24 @@ hr{
 
 .line{
   display:  inline-block;
+  position: fixed;
+  top: 0;
+  left: 5px;
+  height: 100%;
+}
 
+.contacts{
+  position: fixed;
+  left: 5px;
+  top: 10%;
+  width: 100%;
+}
+.contacts:hr{
+  width: 100vw;
 }
 
 .techused{
-margin-left:  120px;
+margin-left:  12px;
 margin-top:  -55px;
 }
 
@@ -120,6 +128,13 @@ margin-top:  -55px;
   display:  inline-block;
   height: 50px;
   width:  auto;
+}
+
+.mainBody{
+  position: fixed;
+  left: 120px;
+  top: 60px;
+
 }
 
 a{

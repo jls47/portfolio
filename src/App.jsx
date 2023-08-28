@@ -27,7 +27,9 @@ function App() {
   return (
     <>
       <OuterLayout />
-      {mode}
+      <div className="mainBody">
+        {mode}
+      </div>
     </>
   )
 }
