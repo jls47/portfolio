@@ -8,6 +8,7 @@ import { createStore } from 'redux';
 const store = createStore(() => ({
   activeWork: -1,
   blogWriting: false,
+  currentMode: 0,
   works: [
     {
       id: 0,

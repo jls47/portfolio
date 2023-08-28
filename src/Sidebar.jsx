@@ -7,12 +7,11 @@ import './App.css'
 function Sidebar() {
 
 	const techHover = (id) => {
-		console.log(id);
 		console.log("hover");
 	}
 
 	const techLeave = (id) => {
-		console.log(id);
+		console.log("leave");
 	}
 
 	return (
@@ -26,15 +25,15 @@ function Sidebar() {
             <div className="line">
                 <p>Luke Schaefer</p> <span className="vertical"></span>
                 <div className="techused">
-                    <a className="tech" onMouseEnter={techHover(0)} onMouseLeave={techLeave()}
+                    <a className="tech" onMouseEnter={() => {techHover(0)}} onMouseLeave={() => {techLeave(0)}}
                         href="https://www.cplusplus.com/"><img className="techimg" src="assets/react.svg"/></a>
-                    <a className="tech" onMouseEnter={techHover(1)} onMouseLeave={techLeave()}
+                    <a className="tech" onMouseEnter={() => {techHover(1)}} onMouseLeave={() => {techLeave(1)}}
                         href="https://nodejs.org/en/"><img className="techimg" src="assets/react.svg"/></a>
-                    <a className="tech" onMouseEnter={techHover(2)} onMouseLeave={techLeave()}
+                    <a className="tech" onMouseEnter={() => {techHover(2)}} onMouseLeave={() => {techLeave(2)}}
                         href="https://www.python.org/"><img className="techimg" src="assets/react.svg"/></a>
-                    <a className="tech" onMouseEnter={techHover(3)} onMouseLeave={techLeave()}
+                    <a className="tech" onMouseEnter={() => {techHover(3)}} onMouseLeave={() => {techLeave(3)}}
                         href="https://reactjs.org/"><img className="techimg" src="assets/react.svg"/></a>
-                    <a className="tech" onMouseEnter={techHover(4)} onMouseLeave={techLeave()}
+                    <a className="tech" onMouseEnter={() => {techHover(4)}} onMouseLeave={() => {techLeave(4)}}
                         href="https://www.postgresql.org/"><img className="techimg" src="assets/react.svg"/></a>
 
                 </div>
