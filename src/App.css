@@ -1,0 +1,304 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+@font-face {
+  font-family: 'simplifica';
+  src: url('simplifica.ttf')  format('truetype')
+}
+
+body{
+  font-family: 'simplifica', Fallback, sans-serif;
+}
+
+button{
+  
+}
+
+.main{
+  text-align: center;
+  margin-top: 5%;
+  font-size: 35px;
+}
+
+.contactme{
+  font-size: 20px;
+
+}
+
+hr{
+  height: 1px;
+  border-width: 0;
+  background-color: black;
+}
+
+.vertical{
+  border-left: 1px solid black;
+  height: 98%;
+  position: absolute;
+  top: 2%;
+  margin-left: 100px;
+}
+
+
+.line{
+  display:  inline-block;
+
+}
+
+.techused{
+margin-left:  120px;
+margin-top:  -55px;
+}
+
+.tech{
+  display:  inline-block;
+  margin-left:  11vw;
+  height: 50px;
+  width:  auto;
+  border-radius: 20px;
+
+  background:  transparent;
+   transition: -webkit-transform 0.3s, all 0.2s;
+}
+
+.tech img:hover{
+  border-radius:  8px;
+  background:  black;
+   transition: -webkit-transform 0.3s, all 0.2s;
+}
+
+.tech img:leave{
+  background: transparent;
+  transition:  -webkit-transform 0.5s, all 0.5s;
+}
+
+.contact a:hover{
+  color: grey;
+}
+
+.techimg{
+  display:  inline-block;
+  height: 50px;
+  width:  auto;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 10vw;
+}
+
+.works{
+  position: relative;
+  margin-left: 15vh;
+  width: 60vh;
+  height: 60vh;
+}
+
+.subwork{
+  display: inline-block;
+  width: 50%;
+  height: 50%;
+  text-align: center;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  text-align: center;
+  transition: -webkit-transform 0.5s, width .5s, height .5s, background .5s, color .5s, border-width .5s, font-size .5s, margin-top 0.5s, margin-left 0.5s;
+  -webkit-animation: background 5s cubic-bezier(1, 1, 1, 1) infinite;
+  animation: background 5s cubic-bezier(1, 1, 1, 1) infinite;
+}
+
+@webkit-keyframes background {
+  0% { background-color: white; }
+  50% { background-color: lightgray; }
+  100% {background-color: white; }
+}
+
+@keyframes background {
+  0% { background-color: white; }
+  50% { background-color: lightgray; }
+  100% { background-color: white; }
+}
+
+
+/* Add Touch Support */
+
+.workContent{
+  margin-top: 40%;
+  transition: -webkit-transform 0.5s, margin-top 0.5s;
+}
+
+.workInfo{
+   display: none;
+}
+
+#sw1{
+  position: absolute;
+  left: 15%;
+  top: -15%;
+}
+
+#sw2{
+  position: absolute;
+  left: 50.7%;
+  top: 20.5%;
+}
+
+#sw3{
+  position: absolute;
+  left: 86.2%;
+  top: -15%;
+}
+
+#sw4{
+  position: absolute;
+  left: 121.8%;
+  top: 20.5%;
+}
+
+#sw5{
+  position: absolute;
+  left: 157.4%;
+  top: -15%;
+}
+
+img{
+   width: 30%;
+}
+
+@media only screen and (max-width: 1250px) {
+  .subwork{
+    width: 40%;
+    height: 40%;
+  }
+  #sw1{
+    left: 20%;
+    top: -10%;
+  }
+
+  #sw2{
+    left: 48.5%;
+    top: 18.5%;
+  }
+
+  #sw3{
+    left: 76.9%;
+    top: -10%;
+  }
+
+  #sw4{
+    left: 105.3%;
+    top: 18.5%;
+  }
+
+  #sw5{
+    left: 133.9%;
+    top: -10%;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  
+  .vertical{
+    
+    margin-left: 85px;
+  }
+   
+   .contactme a{
+      color:black;
+   }
+  
+  .works{
+    margin-left: 22%;
+    margin-top: -5%;
+  }
+
+  .tech{
+    height: 30px;
+    margin-left: 3vw;
+  }
+
+  .techused{
+    margin-left: 80px;
+  }
+   
+   a{
+      color: white;
+   }
+  
+  .subwork{
+    width: 20%;
+    height: 20%;
+  }
+  #sw1{
+    left: 10%;
+    top: -10%;
+  }
+
+  #sw2{
+    left: 24.3%;
+    top: 4.2%;
+  }
+
+  #sw3{
+    left: 10%;
+    top: 18.6%;
+  }
+
+  #sw4{
+    left: 24.3%;
+    top: 32.8%;
+  }
+
+  #sw5{
+    left: 10%;
+    top: 47%;
+  }
+}
