@@ -86,7 +86,7 @@ hr{
 .contacts{
   position: fixed;
   left: 5px;
-  top: 10%;
+  top: 55px;
   width: 100%;
 }
 .contacts:hr{
@@ -151,6 +151,7 @@ img{
 
 .works{
   position: relative;
+  top: 30vh;
   margin-left: 15vh;
   width: 60vh;
   height: 60vh;
@@ -190,9 +191,6 @@ img{
   transition: -webkit-transform 0.5s, margin-top 0.5s;
 }
 
-.workInfo{
-   display: none;
-}
 
 #sw1{
   position: absolute;
@@ -202,25 +200,25 @@ img{
 
 #sw2{
   position: absolute;
-  left: 50.7%;
+  left: 50%;
   top: 20.5%;
 }
 
 #sw3{
   position: absolute;
-  left: 86.2%;
+  left: 85%;
   top: -15%;
 }
 
 #sw4{
   position: absolute;
-  left: 121.8%;
+  left: 120%;
   top: 20.5%;
 }
 
 #sw5{
   position: absolute;
-  left: 157.4%;
+  left: 155%;
   top: -15%;
 }
 

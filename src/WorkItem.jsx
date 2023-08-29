@@ -15,11 +15,13 @@ function WorkItem(props) {
 		links += <a href={ link.url } target="_blank">{link.title}</a>;
 	});
 
+	var disp = props.item.display;
+
 	return (
 		<>
 			<div className="workContent">
 				<img src={ props.item.imgsrc }/>
-				<div className="workInfo">
+				<div className="workInfo" style={{display: disp}}>
 					<p><b>{ props.item.title }</b><br/>
 					{ props.item.content }
 					</p>
