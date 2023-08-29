@@ -226,6 +226,10 @@ img{
    width: 30%;
 }
 
+[data-noshow="1"]{
+  display: none;
+}
+
 @media only screen and (max-width: 1250px) {
   .subwork{
     width: 40%;

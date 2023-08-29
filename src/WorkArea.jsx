@@ -1,6 +1,6 @@
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useState } from 'react'
+import { useState, useEffect} from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -10,12 +10,47 @@ function WorkArea() {
 	//use state to determine if something has been clicked
 	//then what should actually be displayed.  Mirror the old js
 
+	const [workFocus, addFocus] = useState(false);
+	const [displaying, updateDisplaying] = useState(0);
+	const [displayWork, updateWorkDisplay] = useState(["none","none","none","none","none"]);
+
+
 	const handleClick = (id) => {
-		console.log(id);
+		if(!workFocus) {
+			addFocus(true);
+			console.log(id.index);
+			updateDisplaying(id.index + 1);
+			const displaySettings = displayWork.map((d, i) => {
+				if(i === id.index) {
+					return "contents";
+				}
+				return d;
+			})
+			updateWorkDisplay(displaySettings);
+			console.log(displayWork);
+		} else {
+			console.log(displayWork);
+			addFocus(false);
+			const displaySettings = displayWork.map((d, i) => {
+				if(i === id.index) {
+					return "none";
+				}
+				return d;
+			})
+			updateWorkDisplay(displaySettings);
+		}
+	}
+
+	const handleClickOut = () => {
+		console.log(workFocus);
+		if(workFocus) {
+			addFocus(false);
+		}
 	}
 
 	const handleMouseEnter = (id) => {
 		console.log(id);
+		console.log("enter");
 	}
 
 	const works = [
@@ -34,8 +69,7 @@ function WorkArea() {
 				url: "https://www.google.com",
 				tail: " | "
 			}
-			],
-			display: "none"
+			]
 		},
 		{
 			title: "Computer Science Tutoring1",
@@ -52,8 +86,7 @@ function WorkArea() {
 				url: "https://www.google.com",
 				tail: " | "
 			}
-			],
-			display: "none"
+			]
 		},
 		{
 			title: "Computer Science Tutoring2",
@@ -70,8 +103,7 @@ function WorkArea() {
 				url: "https://www.google.com",
 				tail: " | "
 			}
-			],
-			display: "none"
+			]
 		},
 		{
 			title: "Computer Science Tutoring3",
@@ -88,8 +120,7 @@ function WorkArea() {
 				url: "https://www.google.com",
 				tail: " | "
 			}
-			],
-			display: "none"
+			]
 		},
 		{
 			title: "Computer Science Tutoring4",
@@ -104,27 +135,38 @@ function WorkArea() {
 			{
 				title: "App",
 				url: "https://www.google.com",
-				tail: " | "
+				tail: ""
 			}
-			],
-			display: "none"
+			]
 		},
 	]
 
 	return (
 		<>
-			<div class="works">
+			<div className="works" onClick={(id) => {handleClickOut}}>
 			{works.map((work, index) => {
 				var id = "sw" + (index + 1);
-				return ( 
-					<div className="subwork" id={id} onClick={handleClick({index})} onMouseEnter={() => {handleMouseEnter({index})}}>
-						<WorkItem key={index} item={works[index]} /> 
-					</div>
-					
-					
+				if((workFocus && displaying != (index + 1))) {
 
-
+					return ( 
+						<div key={index} className="subwork" data-noshow="1" id={id} onClick={() => {handleClick({index})}} onMouseEnter={() => {handleMouseEnter({index})}}>
+							<WorkItem item={works[index]} display={displayWork[index]} /> 
+						</div>
 					)
+				} else if((workFocus && displaying == (index + 1))) {
+					return(
+					<div key={index} className="subwork" id={id} onClick={() => {handleClick({index})}} onMouseEnter={() => {handleMouseEnter({index})}}>
+						<WorkItem item={works[index]} display={displayWork[index]} /> 
+					</div>
+					)
+				}
+				return (
+					<div key={index} className="subwork" id={id} onClick={() => {handleClick({index})}} onMouseEnter={() => {handleMouseEnter({index})}}>
+						<WorkItem item={works[index]} display={displayWork[index]} /> 
+					</div>
+				)
+				
+
 			})}
 			</div>
 		</>
