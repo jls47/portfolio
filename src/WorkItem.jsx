@@ -8,7 +8,7 @@ import './App.css'
 
 function WorkItem(props) {
 
-	var links = "";
+	var links = [];
 
 	const [displaying, updateDisplay] = useState(props.display);
 
@@ -17,21 +17,23 @@ function WorkItem(props) {
 		"none": "40%"
 	};
 
+	const imgWidth = {
+		"contents": "15%",
+		"none": "30%"
+	}
+
 	props.item.links.forEach((link) => {
-		links += <a href={ link.url } target="_blank">{link.title}</a>;
+		links.push(<a href={ link.url } target="_blank" key={link.id}>{link.title} {link.tail}</a>);
 	});
 
 	useEffect(() => {
-		console.log("Change in props display");
-		console.log(props.display);
-		console.log(styles[props.display]);
 		updateDisplay(props.display);
 	}, [props]);
 
 		return(
 		<>
 			<div className="workContent" style={{marginTop: styles[displaying]}}>
-				<img src={ props.item.imgsrc }/>
+				<img src={ props.item.imgsrc } style={{width: imgWidth[displaying]}}/>
 				<div className="workInfo" style={{display:displaying, top:"-200px"}}>
 					<p><b>{ props.item.title }</b><br/>
 					{ props.item.content }

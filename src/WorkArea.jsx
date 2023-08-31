@@ -2,6 +2,9 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState, useEffect} from 'react'
 import reactLogo from './assets/react.svg'
+import chessLogo from './assets/chess.png'
+import tutoringLogo from './assets/tutoring.png'
+import itchLogo from './assets/itchio-textless-black-w.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import WorkItem from './WorkItem';
@@ -15,9 +18,12 @@ function WorkArea() {
 	const [displayWork, updateWorkDisplay] = useState(["none","none","none","none","none"]);
 	const [hovering, updateHovering] = useState(["50%","50%","50%","50%","50%"]);
 
-	const zIndices = {
-		"60%": "999",
-		"40%": ""
+	const zIndices = (percent, id) => {
+		if(percent == "60%") {
+			return "999";
+		} else {
+			return "" + id;
+		}
 	}
 
 
@@ -73,14 +79,31 @@ function WorkArea() {
 
 	const works = [
 		{
+			title: "itch.io",
+			content: `
+				I tutored Computer Science students at Shoreline Community College for two years between 2020 and 2022
+            	before I started my recent role in Solutions Engineering at Health Note.  
+            	I helped students of all sorts get their feet wet in Python and Java, learning along the way how best to
+            	explain and teach everything from syntax to Data Structures & Algorithms.
+			`,
+			imgsrc: itchLogo,
+			links: [
+			{
+				title: "App",
+				url: "https://www.google.com",
+				tail: " | "
+			}
+			]
+		},
+		{
 			title: "Computer Science Tutoring",
 			content: `
 				I tutored Computer Science students at Shoreline Community College for two years between 2020 and 2022
-            	before I started my current role in Solutions Engineering at <a href="https://www.healthnote.com/">Health Note</a>.  
+            	before I started my recent role in Solutions Engineering at Health Note.  
             	I helped students of all sorts get their feet wet in Python and Java, learning along the way how best to
             	explain and teach everything from syntax to Data Structures & Algorithms.
 			`,
-			imgsrc: "assets/react.svg",
+			imgsrc: tutoringLogo,
 			links: [
 			{
 				title: "App",
@@ -90,31 +113,14 @@ function WorkArea() {
 			]
 		},
 		{
-			title: "Computer Science Tutoring1",
+			title: "Chess",
 			content: `
 				I tutored Computer Science students at Shoreline Community College for two years between 2020 and 2022
             	before I started my current role in Solutions Engineering at <a href="https://www.healthnote.com/">Health Note</a>.  
             	I helped students of all sorts get their feet wet in Python and Java, learning along the way how best to
             	explain and teach everything from syntax to Data Structures & Algorithms.
 			`,
-			imgsrc: "assets/react.svg",
-			links: [
-			{
-				title: "App",
-				url: "https://www.google.com",
-				tail: " | "
-			}
-			]
-		},
-		{
-			title: "Computer Science Tutoring2",
-			content: `
-				I tutored Computer Science students at Shoreline Community College for two years between 2020 and 2022
-            	before I started my current role in Solutions Engineering at <a href="https://www.healthnote.com/">Health Note</a>.  
-            	I helped students of all sorts get their feet wet in Python and Java, learning along the way how best to
-            	explain and teach everything from syntax to Data Structures & Algorithms.
-			`,
-			imgsrc: "assets/react.svg",
+			imgsrc: chessLogo,
 			links: [
 			{
 				title: "App",
@@ -171,15 +177,19 @@ function WorkArea() {
 							<WorkItem item={works[index]} display={displayWork[index]} /> 
 						</div>
 					)
+
 				} else if((workFocus && displaying == (index + 1))) {
+
 					return(
 					<div key={index} className="subwork" id={id} onClick={() => {handleClick({index})}} onMouseEnter={() => {handleMouseEnter({index})}} style={{width: "70vw",height:"50vw",position:"absolute",left:"50px",top:"-200px"}} onMouseLeave={() => {handleMouseLeave({index})}}>
 						<WorkItem item={works[index]} display={displayWork[index]} /> 
 					</div>
 					)
+
 				}
+
 				return (
-					<div key={index} className="subwork" id={id} onClick={() => {handleClick({index})}} onMouseEnter={() => {handleMouseEnter({index})}} onMouseLeave={() => {handleMouseLeave({index})}} style={{width: hovering[index],height:hovering[index],zIndex:zIndices[hovering[index]]}}>
+					<div key={index} className="subwork" id={id} onClick={() => {handleClick({index})}} onMouseEnter={() => {handleMouseEnter({index})}} onMouseLeave={() => {handleMouseLeave({index})}} style={{width: hovering[index],height:hovering[index],zIndex:zIndices(hovering[index],5 - index)}}>
 						<WorkItem item={works[index]} display={displayWork[index]} /> 
 					</div>
 				)

@@ -166,7 +166,7 @@ img{
   border-width: 1px;
   border-color: black;
   text-align: center;
-  transition: -webkit-transform 0.5s, width .5s, height .5s, background .5s, color .5s, border-width .5s, font-size .5s, margin-top 0.5s, margin-left 0.5s;
+  transition: -webkit-transform 0.5s, width .5s, height .5s, background .5s, color .5s, border-width .5s, font-size .5s, margin-top 0.5s, margin-left 0.5s, left 0.5s, top 0.5s;
   -webkit-animation: background 5s cubic-bezier(1, 1, 1, 1) infinite;
   animation: background 5s cubic-bezier(1, 1, 1, 1) infinite;
 }
@@ -181,7 +181,7 @@ img{
   border-width: 1px;
   border-color: black;
   text-align: center;
-  transition: -webkit-transform 0.5s, width .5s, height .5s, background .5s, color .5s, border-width .5s, font-size .5s, margin-top 0.5s, margin-left 0.5s, left 0.2s, top 0.2s;
+  transition: -webkit-transform 0.5s, width .5s, height .5s, background .5s, color .5s, border-width .5s, font-size .5s, margin-top 0.5s, margin-left 0.5s, left 0.5s, top 0.5s;
   -webkit-animation: background 5s cubic-bezier(1, 1, 1, 1) infinite;
   animation: background 5s cubic-bezier(1, 1, 1, 1) infinite;
 }
@@ -216,7 +216,7 @@ img{
 #sw1:hover{
   position: absolute;
   left: 13%;
-  top: -17%;
+  top: -30%;
 }
 
 #sw2{
@@ -239,8 +239,8 @@ img{
 
 #sw3:hover{
   position: absolute;
-  left: 83%;
-  top: -17%;
+  left: 78%;
+  top: -30%;
 }
 
 #sw4{
@@ -264,7 +264,7 @@ img{
 #sw5:hover{
   position: absolute;
   left: 153%;
-  top: -17%;
+  top: -30%;
 }
 
 img{
