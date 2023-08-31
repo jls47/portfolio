@@ -13,8 +13,8 @@ function WorkItem(props) {
 	const [displaying, updateDisplay] = useState(props.display);
 
 	const styles = {
-		"contents": "100vw",
-		"none": ""
+		"contents": "10%",
+		"none": "40%"
 	};
 
 	props.item.links.forEach((link) => {
@@ -30,9 +30,9 @@ function WorkItem(props) {
 
 		return(
 		<>
-			<div className="workContent">
+			<div className="workContent" style={{marginTop: styles[displaying]}}>
 				<img src={ props.item.imgsrc }/>
-				<div className="workInfo" style={{display:displaying, width:styles[displaying]}}>
+				<div className="workInfo" style={{display:displaying, top:"-200px"}}>
 					<p><b>{ props.item.title }</b><br/>
 					{ props.item.content }
 					</p>

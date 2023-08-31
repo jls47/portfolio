@@ -155,7 +155,7 @@ function WorkArea() {
 					)
 				} else if((workFocus && displaying == (index + 1))) {
 					return(
-					<div key={index} className="subwork" id={id} onClick={() => {handleClick({index})}} onMouseEnter={() => {handleMouseEnter({index})}}>
+					<div key={index} className="subwork" id={id} onClick={() => {handleClick({index})}} onMouseEnter={() => {handleMouseEnter({index})}} style={{width: "70vw",height:"50vw",position:"absolute",left:"50px",top:"-200px"}}>
 						<WorkItem item={works[index]} display={displayWork[index]} /> 
 					</div>
 					)

@@ -171,6 +171,21 @@ img{
   animation: background 5s cubic-bezier(1, 1, 1, 1) infinite;
 }
 
+.subwork:hover{
+
+  display: inline-block;
+  width: 60%;
+  height: 60%;
+  text-align: center;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  text-align: center;
+  transition: -webkit-transform 0.5s, width .5s, height .5s, background .5s, color .5s, border-width .5s, font-size .5s, margin-top 0.5s, margin-left 0.5s, left 0.2s, top 0.2s;
+  -webkit-animation: background 5s cubic-bezier(1, 1, 1, 1) infinite;
+  animation: background 5s cubic-bezier(1, 1, 1, 1) infinite;
+}
+
 @webkit-keyframes background {
   0% { background-color: white; }
   50% { background-color: lightgray; }
@@ -198,10 +213,22 @@ img{
   top: -15%;
 }
 
+#sw1:hover{
+  position: absolute;
+  left: 13%;
+  top: -17%;
+}
+
 #sw2{
   position: absolute;
   left: 50%;
   top: 20.5%;
+}
+
+#sw2:hover{
+  position: absolute;
+  left: 48%;
+  top: 18.5%;
 }
 
 #sw3{
@@ -210,16 +237,34 @@ img{
   top: -15%;
 }
 
+#sw3:hover{
+  position: absolute;
+  left: 83%;
+  top: -17%;
+}
+
 #sw4{
   position: absolute;
   left: 120%;
   top: 20.5%;
 }
 
+#sw4:hover{
+  position: absolute;
+  left: 118%;
+  top: 18.5%;
+}
+
 #sw5{
   position: absolute;
   left: 155%;
   top: -15%;
+}
+
+#sw5:hover{
+  position: absolute;
+  left: 153%;
+  top: -17%;
 }
 
 img{
