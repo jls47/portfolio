@@ -13,6 +13,12 @@ function WorkArea() {
 	const [workFocus, addFocus] = useState(false);
 	const [displaying, updateDisplaying] = useState(0);
 	const [displayWork, updateWorkDisplay] = useState(["none","none","none","none","none"]);
+	const [hovering, updateHovering] = useState(["50%","50%","50%","50%","50%"]);
+
+	const zIndices = {
+		"60%": "999",
+		"40%": ""
+	}
 
 
 	const handleClick = (id) => {
@@ -49,8 +55,20 @@ function WorkArea() {
 	}
 
 	const handleMouseEnter = (id) => {
-		console.log(id);
-		console.log("enter");
+		const hoverSettings = displayWork.map((d, i) => {
+			if(i === id.index) {
+				return "60%";
+			}
+			return "40%";
+		})
+		updateHovering(hoverSettings);
+	}
+
+	const handleMouseLeave = (id) => {
+		const hoverSettings = displayWork.map((d, i) => {
+			return "50%";
+		})
+		updateHovering(hoverSettings);
 	}
 
 	const works = [
@@ -149,19 +167,19 @@ function WorkArea() {
 				if((workFocus && displaying != (index + 1))) {
 
 					return ( 
-						<div key={index} className="subwork" data-noshow="1" id={id} onClick={() => {handleClick({index})}} onMouseEnter={() => {handleMouseEnter({index})}}>
+						<div key={index} className="subwork" data-noshow="1" id={id} onClick={() => {handleClick({index})}} onMouseEnter={() => {handleMouseEnter({index})}} onMouseLeave={() => {handleMouseLeave({index})}}>
 							<WorkItem item={works[index]} display={displayWork[index]} /> 
 						</div>
 					)
 				} else if((workFocus && displaying == (index + 1))) {
 					return(
-					<div key={index} className="subwork" id={id} onClick={() => {handleClick({index})}} onMouseEnter={() => {handleMouseEnter({index})}} style={{width: "70vw",height:"50vw",position:"absolute",left:"50px",top:"-200px"}}>
+					<div key={index} className="subwork" id={id} onClick={() => {handleClick({index})}} onMouseEnter={() => {handleMouseEnter({index})}} style={{width: "70vw",height:"50vw",position:"absolute",left:"50px",top:"-200px"}} onMouseLeave={() => {handleMouseLeave({index})}}>
 						<WorkItem item={works[index]} display={displayWork[index]} /> 
 					</div>
 					)
 				}
 				return (
-					<div key={index} className="subwork" id={id} onClick={() => {handleClick({index})}} onMouseEnter={() => {handleMouseEnter({index})}}>
+					<div key={index} className="subwork" id={id} onClick={() => {handleClick({index})}} onMouseEnter={() => {handleMouseEnter({index})}} onMouseLeave={() => {handleMouseLeave({index})}} style={{width: hovering[index],height:hovering[index],zIndex:zIndices[hovering[index]]}}>
 						<WorkItem item={works[index]} display={displayWork[index]} /> 
 					</div>
 				)
