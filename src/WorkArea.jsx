@@ -91,7 +91,8 @@ function WorkArea() {
 			{
 				title: "App",
 				url: "https://www.google.com",
-				tail: " | "
+				tail: " | ",
+				id: 0
 			}
 			]
 		},
@@ -108,7 +109,8 @@ function WorkArea() {
 			{
 				title: "App",
 				url: "https://www.google.com",
-				tail: " | "
+				tail: " | ",
+				id: 0
 			}
 			]
 		},
@@ -125,7 +127,8 @@ function WorkArea() {
 			{
 				title: "App",
 				url: "https://www.google.com",
-				tail: " | "
+				tail: " | ",
+				id: 0
 			}
 			]
 		},
@@ -142,7 +145,8 @@ function WorkArea() {
 			{
 				title: "App",
 				url: "https://www.google.com",
-				tail: " | "
+				tail: " | ",
+				id: 0
 			}
 			]
 		},
@@ -159,7 +163,8 @@ function WorkArea() {
 			{
 				title: "App",
 				url: "https://www.google.com",
-				tail: ""
+				tail: "",
+				id: 0
 			}
 			]
 		},
@@ -181,7 +186,7 @@ function WorkArea() {
 				} else if((workFocus && displaying == (index + 1))) {
 
 					return(
-					<div key={index} className="subwork" id={id} onClick={() => {handleClick({index})}} onMouseEnter={() => {handleMouseEnter({index})}} style={{width: "70vw",height:"50vw",position:"absolute",left:"50px",top:"-200px"}} onMouseLeave={() => {handleMouseLeave({index})}}>
+					<div key={index} className="subwork" id="sw1" onClick={() => {handleClick({index})}} onMouseEnter={() => {handleMouseEnter({index})}} style={{width: "70vw",height:"70vh",position:"relative"}} onMouseLeave={() => {handleMouseLeave({index})}}>
 						<WorkItem item={works[index]} display={displayWork[index]} /> 
 					</div>
 					)

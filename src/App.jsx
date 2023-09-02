@@ -7,7 +7,7 @@ import './App.css'
 import WorkArea from './WorkArea';
 import AdminLogin from './AdminLogin';
 import BlogArea from './BlogArea';
-import OuterLayout from './OuterLayout';
+import Sidebar from './Sidebar'
 
 function App() {
   const currentMode = useSelector(state => state.currentMode);
@@ -26,7 +26,7 @@ function App() {
 
   return (
     <>
-      <OuterLayout />
+      <Sidebar />
       <div className="main">
         {mode}
       </div>

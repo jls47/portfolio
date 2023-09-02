@@ -9,22 +9,6 @@ const store = createStore(() => ({
   activeWork: -1,
   blogWriting: false,
   currentMode: 0,
-  works: [
-    {
-      id: 0,
-      imgsrc: "blank.jpg",
-      title: "Test",
-      desc: "Test work",
-      links: ["http://jlukes.com", "https://www.google.com/"]
-    },
-    {
-      id: 1,
-      imgsrc: "blank.jpg",
-      title: "Test",
-      desc: "Test work",
-      links: ["http://jlukes.com", "https://www.google.com/"]
-    }
-  ],
   posts: [
     {
       id: 0,
