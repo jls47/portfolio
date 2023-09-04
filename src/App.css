@@ -314,6 +314,20 @@ img{
   font-size: 30px;
 }
 
+.subwork:hover{
+  display: inline-block;
+  width: 20%;
+  height: 50%;
+  text-align: center;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  text-align: center;
+  transition: -webkit-transform 0.5s, width .5s, height .5s, background .5s, color .5s, border-width .5s, font-size .5s, margin-top 0.5s, margin-left 0.5s, left 0.5s, top 0.5s;
+  -webkit-animation: background 5s cubic-bezier(1, 1, 1, 1) infinite;
+  animation: background 5s cubic-bezier(1, 1, 1, 1) infinite;
+}
+
   
   .vertical{
     

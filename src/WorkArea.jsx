@@ -62,7 +62,6 @@ function WorkArea() {
 	}
 
 	const handleMouseEnter = (id) => {
-		if(!isMobile) {
 			const hoverSettings = displayWork.map((d, i) => {
 				if(i === id.index) {
 					return "60%";
@@ -70,7 +69,6 @@ function WorkArea() {
 				return "40%";
 			})
 			updateHovering(hoverSettings);
-		}
 	}
 
 	const handleMouseLeave = (id) => {
