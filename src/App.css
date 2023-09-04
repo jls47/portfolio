@@ -306,6 +306,30 @@ img{
     left: 133.9%;
     top: -10%;
   }
+  #sw1:hover{
+    left: 10%;
+    top: -10%;
+  }
+
+  #sw2:hover{
+    left: 44.3%;
+    top: 24.2%;
+  }
+
+  #sw3:hover{
+    left: 10%;
+    top: 58.6%;
+  }
+
+  #sw4:hover{
+    left: 44.3%;
+    top: 92.8%;
+  }
+
+  #sw5:hover{
+    left: 10%;
+    top: 127%;
+  }
 }
 
 @media only screen and (max-width: 900px) {
