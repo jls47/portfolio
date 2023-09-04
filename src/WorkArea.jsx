@@ -8,6 +8,7 @@ import itchLogo from './assets/itchio-textless-black-w.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import WorkItem from './WorkItem';
+import {isMobile} from 'react-device-detect';
 
 function WorkArea() {
 	//use state to determine if something has been clicked
@@ -61,13 +62,15 @@ function WorkArea() {
 	}
 
 	const handleMouseEnter = (id) => {
-		const hoverSettings = displayWork.map((d, i) => {
-			if(i === id.index) {
-				return "60%";
-			}
-			return "40%";
-		})
-		updateHovering(hoverSettings);
+		if(!isMobile) {
+			const hoverSettings = displayWork.map((d, i) => {
+				if(i === id.index) {
+					return "60%";
+				}
+				return "40%";
+			})
+			updateHovering(hoverSettings);
+		}
 	}
 
 	const handleMouseLeave = (id) => {
