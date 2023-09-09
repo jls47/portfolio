@@ -307,28 +307,28 @@ img{
     top: -10%;
   }
   #sw1:hover{
-    left: 20%;
-    top: -10%;
+    left: 15%;
+    top: -15%;
   }
 
   #sw2:hover{
-    left: 48.5%;
-    top: 18.5%;
+    left: 43.5%;
+    top: 13.5%;
   }
 
   #sw3:hover{
-    left: 76.9%;
-    top: -10%;
+    left: 71.9%;
+    top: -15%;
   }
 
   #sw4:hover{
-    left: 105.3%;
-    top: 18.5%;
+    left: 100.3%;
+    top: 13.5%;
   }
 
   #sw5:hover{
-    left: 133.9%;
-    top: -10%;
+    left: 128.9%;
+    top: -15%;
   }
 }
 
