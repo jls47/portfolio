@@ -5,7 +5,9 @@ import reactLogo from './assets/react.svg'
 import chessLogo from './assets/chess.png'
 import tutoringLogo from './assets/tutoring.png'
 import itchLogo from './assets/itchio-textless-black-w.svg'
-import viteLogo from '/vite.svg'
+import cruiseLogo from './assets/cruise.png'
+import karaokeLogo from './assets/karaoke.png'
+import yuzuLogo from './assets/modded_yuzu_logo.png'
 import './App.css'
 import WorkItem from './WorkItem';
 import {isMobile} from 'react-device-detect';
@@ -82,18 +84,29 @@ function WorkArea() {
 		{
 			title: "itch.io",
 			content: `
-				I tutored Computer Science students at Shoreline Community College for two years between 2020 and 2022
-            	before I started my recent role in Solutions Engineering at Health Note.  
-            	I helped students of all sorts get their feet wet in Python and Java, learning along the way how best to
-            	explain and teach everything from syntax to Data Structures & Algorithms.
+				I currently contribute to itch.io, the premier indie game library and marketplace.  I currently work
+				on the desktop app, which is an Electron and React-based application that also pulls content
+				directly from the website for some portions of the app.  Working on a light theme at the moment.
 			`,
 			imgsrc: itchLogo,
 			links: [
 			{
-				title: "App",
-				url: "https://www.google.com",
+				title: "Main Site",
+				url: "https://itch.io/",
 				tail: " | ",
 				id: 0
+			},
+			{
+				title: "App Repo",
+				url: "https://github.com/itchio/itch",
+				tail: " | ",
+				id: 1
+			},
+			{
+				title: "Personal Dev Fork",
+				url: "https://github.com/jls47/itch",
+				tail: "",
+				id: 2
 			}
 			]
 		},
@@ -108,64 +121,94 @@ function WorkArea() {
 			imgsrc: tutoringLogo,
 			links: [
 			{
-				title: "App",
-				url: "https://www.google.com",
-				tail: " | ",
-				id: 0
-			}
-			]
-		},
-		{
-			title: "Chess",
-			content: `
-				I tutored Computer Science students at Shoreline Community College for two years between 2020 and 2022
-            	before I started my current role in Solutions Engineering at <a href="https://www.healthnote.com/">Health Note</a>.  
-            	I helped students of all sorts get their feet wet in Python and Java, learning along the way how best to
-            	explain and teach everything from syntax to Data Structures & Algorithms.
-			`,
-			imgsrc: chessLogo,
-			links: [
-			{
-				title: "App",
-				url: "https://www.google.com",
-				tail: " | ",
-				id: 0
-			}
-			]
-		},
-		{
-			title: "Computer Science Tutoring3",
-			content: `
-				I tutored Computer Science students at Shoreline Community College for two years between 2020 and 2022
-            	before I started my current role in Solutions Engineering at <a href="https://www.healthnote.com/">Health Note</a>.  
-            	I helped students of all sorts get their feet wet in Python and Java, learning along the way how best to
-            	explain and teach everything from syntax to Data Structures & Algorithms.
-			`,
-			imgsrc: "assets/react.svg",
-			links: [
-			{
-				title: "App",
-				url: "https://www.google.com",
-				tail: " | ",
-				id: 0
-			}
-			]
-		},
-		{
-			title: "Computer Science Tutoring4",
-			content: `
-				I tutored Computer Science students at Shoreline Community College for two years between 2020 and 2022
-            	before I started my current role in Solutions Engineering at <a href="https://www.healthnote.com/">Health Note</a>.  
-            	I helped students of all sorts get their feet wet in Python and Java, learning along the way how best to
-            	explain and teach everything from syntax to Data Structures & Algorithms.
-			`,
-			imgsrc: "assets/react.svg",
-			links: [
-			{
-				title: "App",
-				url: "https://www.google.com",
+				title: "Student Tutoring Center",
+				url: "https://www.shoreline.edu/apply-and-aid/learning-support-centers/default.aspx",
 				tail: "",
 				id: 0
+			}
+			]
+		},
+		{
+			title: "Yuzu",
+			content: `
+				Yuzu. An open source Switch emulator built in C++ that supports Vulkan.  I did some work that
+				fixed a bug with the QT WebEngine implementation that was causing navigation issues and in 
+				general learned a great deal about how UIs are set up with this framework.
+			`,
+			imgsrc: yuzuLogo,
+			links: [
+			{
+				title: "App Repo",
+				url: "https://github.com/yuzu-emu/yuzu",
+				tail: "",
+				id: 0
+			}
+			]
+		},
+		{
+			title: "Monkey Pub Songbook",
+			content: `
+				An early fullstack app: a karaoke song browser for the Monkey Pub.  Unfinished, but operational. 
+				Built with Vue and Node, with the backend hosted on Heroku.  Scaling was resolved by sharding the 
+				database by section of the alphabet, with up to 7 shards able to hold a couple thousand songs each 
+				and maintain moderately decent search time.
+			`,
+			imgsrc: karaokeLogo,
+			links: [
+			{
+				title: "Live App",
+				url: "https://jls47.github.io/monkeyfront/#/",
+				tail: " | ",
+				id: 0
+			},
+			{
+				title: "Frontend Code",
+				url: "https://github.com/jls47/monkeyfront",
+				tail: " | ",
+				id: 1
+			},
+			{
+				title: "Backend Code",
+				url: "https://github.com/jls47/monkeyback",
+				tail: "",
+				id: 2
+			}
+			]
+		},
+		{
+			title: "Holland America Scraping Utilities",
+			content: `
+				Holland America Line. Web scraping utilities and an API to save dozens of man-hours over a
+                three month project.  With the help of Python, Celery, RabbitMQ, and Selenium, I scraped
+                hundreds of pages at a time in search of content that was missing, compiled the results
+                in a .csv, and emailed the results.  It was honestly a godsend, freeing me and others up to 
+                do work that was infinitely less menial.
+			`,
+			imgsrc: cruiseLogo,
+			links: [
+			{
+				title: "Main Scraper",
+				url: "https://github.com/jls47/holam",
+				tail: " | ",
+				id: 0
+			},
+			{
+				title: "Django API",
+				url: "https://github.com/jls47/holamapi",
+				tail: " | ",
+				id: 1
+			},
+			{
+				title: "Task Scheduler",
+				url: "https://github.com/jls47/celery",
+				tail: " | ",
+				id: 2
+			},
+			{
+				title: "Current Holland America Site",
+				url: "https://www.hollandamerica.com/en_US.html",
+				tail: "",
+				id: 3
 			}
 			]
 		},
